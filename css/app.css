@@ -1,0 +1,259 @@
+/* Roboto Condensed Font */
+@font-face{
+    src: url('../fonts/roboto-condensed.light.ttf');
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+}
+
+/* Raleway Regular Font */
+@font-face{
+    src: url('../fonts/Raleway-Regular.ttf');
+    font-family: 'Raleway Regular';
+    font-weight: 400;
+}
+
+/* Lato Regular Font */
+@font-face{
+    src: url('../fonts/Lato-Regular.ttf');
+    font-family: 'Lato Regular';
+    font-weight: 400;
+}
+
+/* Montserral Regular Font */
+@font-face{
+    src: url('../fonts/Montserrat-Regular.ttf');
+    font-family: 'Montserrat Regular';
+    font-weight: 400;
+}
+
+:root{
+    font-size: 1rem;
+    --primary-color: #4e53a5;
+    --light-color: #ffffff;
+    --dark-color: #181818;
+    --dark-grey: #aaaaaa;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    line-height: 1.2em;
+}
+
+ul{
+    list-style-type: none;
+}
+
+select{
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 14px;
+    width: 100%;
+}
+
+*[data-completed="true"]{
+    text-decoration: line-through;
+}
+
+*[data-completed="false"]{
+    text-decoration: none;
+}
+
+*.task-hidden{
+    display: none;
+}
+
+i[class="fas fa-window-close"]{
+    color: red;
+}
+
+i[class="fas fa-pen"]{
+    color: #4e53a5;
+}
+
+.not-completed-cursor{
+    cursor: not-allowed;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+.message{
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.toggle-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-wrapper .toggle-btn{
+    background-color: var(--dark-grey);
+    border-radius: 30px;
+    height: 30px;
+    padding: 5px;
+    transition: all 150ms ease-in-out;
+    width: 60px;
+}
+
+.toggle-wrapper .toggle-btn.active{
+    background-color: var(--primary-color);
+}
+
+.toggle-wrapper .toggle-btn.active > .inner-circle{
+    margin-left: 28px;
+}
+
+.toggle-wrapper .toggle-btn > .inner-circle{
+    background-color: var(--light-color);
+    border-radius: 50%;
+    width: 19px;
+    height: 19px;
+    transition: all 150ms ease-in-out;
+}
+
+.toggle-wrapper .indicator{
+    padding-top: 20px;
+}
+
+#app #main-app,
+#app #settings-sidebar{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.modal-title{
+    color: #181818;
+}
+
+#app.light-mode #main-app,
+#app.light-mode #settings-sidebar{
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* Settings Sidebar */
+#settings-sidebar{
+    font-size: 17px;
+    height: 100%;
+    padding-top: 20px;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    transition: all 500ms ease-in;
+    width: 300px;
+    z-index: 1;
+}
+
+#settings-sidebar.active{
+    left: 0;
+}
+
+#settings-sidebar .settings-options{
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.settings-options label{
+    display: block;
+}
+
+/* Main App Section */
+#main-app{
+    border-radius: 5px;
+    margin: 50px auto;
+    max-width: 683px;
+    padding: 35px;
+    position: relative;
+    /* width: 50%; */
+}
+
+#main-app .app-today{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.app-today .app-today-left{
+    display: flex;
+    align-items: center;
+}
+
+.app-today .app-today-left .app-date{
+    font-size: 50px;
+    padding-right: 5px;
+}
+
+.app-today .app-today-right{
+    align-self: center;
+}
+
+/* Add Task */
+#add-task{
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: var(--light-color);
+    cursor: pointer;
+    font-size: 25px;
+    height: 70px;
+    line-height: 70px;
+    margin: auto;
+    text-align: center;
+    transition: all 0.3s ease-in;
+    width: 70px;
+}
+
+#add-task:hover{
+    transform: translateY(-5px);
+    opacity: 0.8;
+}
+
+/* Task List */
+#task-list{
+    margin-top: 30px;
+}
+
+#task-list .task-item{
+    margin-top: 10px;
+}
+
+#task-list .task-item:hover{
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.task-item #check-task span.active{
+    background-color: #71c55d;
+}
+
+.task-item #check-task span.active .fas{
+    color: #ffffff;
+}
+
+clear-tasks-btn{
+    /* visibility: ; */
+}
+
+/* Settings Icon */
+#settings-icon{
+    cursor: pointer;
+    margin-top: 30px;
+    left: 50px;
+    position: absolute;
+    top: 15px;
+    transition: all 0.3s ease-in;
+}
+
+#settings-icon:hover{
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
